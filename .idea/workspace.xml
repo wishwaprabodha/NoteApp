@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e632b06-1d0d-45ac-8e1d-cd9d4fe438f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="shift-attendance" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/attendance/service/attendance-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4158">
+              <caret line="198" column="15" selection-start-line="198" selection-start-column="15" selection-end-line="198" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/attendance/routes/attendance-route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/attendance/data/attendance-data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="123" column="30" lean-forward="true" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bulk-upload/data/bulk-upload-data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2121">
+              <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bulk-upload/routes/bulk-upload-route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-88">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bulk-upload/service/bulk-upload-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="757">
+              <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/services/db.js" />
+        <option value="$PROJECT_DIR$/services/shiftService.js" />
+        <option value="$PROJECT_DIR$/routes/shiftRoute.js" />
+        <option value="$PROJECT_DIR$/shift/shiftRoute.js" />
+        <option value="$PROJECT_DIR$/shift/routes/shiftRoute.js" />
+        <option value="$PROJECT_DIR$/staff/routes/staffRoute.js" />
+        <option value="$PROJECT_DIR$/staffShift/services/staffShiftServices.js" />
+        <option value="$PROJECT_DIR$/staffShift/routes/staffShiftRoute.js" />
+        <option value="$PROJECT_DIR$/shiftWorkingDay/routes/shiftWorkingDayRoute.js" />
+        <option value="$PROJECT_DIR$/shiftTimeSlot/routes/shiftTimeSlotRoute.js" />
+        <option value="$PROJECT_DIR$/staff/services/staffService.js" />
+        <option value="$PROJECT_DIR$/staffShift/services/staffShiftService.js" />
+        <option value="$PROJECT_DIR$/attendance/routes/attendanceRoute.js" />
+        <option value="$PROJECT_DIR$/attendance/services/attendanceServices.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/shift/services/shiftService.js" />
+        <option value="$PROJECT_DIR$/shiftTimeSlot/services/shiftTimeSlotService.js" />
+        <option value="$PROJECT_DIR$/shiftWorkingDay/services/shiftWorkingDayService.js" />
+        <option value="$PROJECT_DIR$/shiftWorkingDay/data/shiftWorkingDayService.js" />
+        <option value="$PROJECT_DIR$/test/shift-time-slot-test.js" />
+        <option value="$PROJECT_DIR$/test/shift-test.js" />
+        <option value="$PROJECT_DIR$/staff/data/staff-data.js" />
+        <option value="$PROJECT_DIR$/staff/routes/staff-route.js" />
+        <option value="$PROJECT_DIR$/test/staff-test.js" />
+        <option value="$PROJECT_DIR$/test/attendance-test.js" />
+        <option value="$PROJECT_DIR$/test/staff-shift-test.js" />
+        <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/test/shift-working-day-test.js" />
+        <option value="$PROJECT_DIR$/db/db.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/shift-working-day/routes/shift-working-day-route.js" />
+        <option value="$PROJECT_DIR$/shift-time-slot/routes/shift-time-slot-route.js" />
+        <option value="$PROJECT_DIR$/staff-shift/routes/staff-shift-route.js" />
+        <option value="$PROJECT_DIR$/shift/data/shift-data.js" />
+        <option value="$PROJECT_DIR$/shift/routes/shift-route.js" />
+        <option value="$PROJECT_DIR$/shift/service/shift-service.js" />
+        <option value="$PROJECT_DIR$/staff/service/staff-service.js" />
+        <option value="$PROJECT_DIR$/shift-time-slot/service/shift-time-slot-service.js" />
+        <option value="$PROJECT_DIR$/shift-working-day/service/shift-working-day-service.js" />
+        <option value="$PROJECT_DIR$/shift-working-day/data/shift-working-day-data.js" />
+        <option value="$PROJECT_DIR$/shift-time-slot/data/shift-time-slot-data.js" />
+        <option value="$PROJECT_DIR$/staff-shift/service/staff-shift-service.js" />
+        <option value="$PROJECT_DIR$/staff-shift/data/staff-shift-data.js" />
+        <option value="$PROJECT_DIR$/attendance/data/bulk-attendance-data.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/attendance/data/attendance-data.js" />
+        <option value="$PROJECT_DIR$/attendance/service/attendance-service.js" />
+        <option value="$PROJECT_DIR$/attendance/routes/attendance-route.js" />
+        <option value="$PROJECT_DIR$/bulk-upload/routes/bulk-upload-route.js" />
+        <option value="$PROJECT_DIR$/bulk-upload/service/bulk-upload-service.js" />
+        <option value="$PROJECT_DIR$/bulk-upload/data/bulk-upload-data.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1366" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowDB Browser.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Backup/POC/front-end/backup/frontend" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shift" />
+      <recent name="$PROJECT_DIR$/shift/routes" />
+      <recent name="$PROJECT_DIR$/shift/services" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.server.js">
+    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/test.js</test-file>
+      <test-names>
+        <name value="SAMPLE unit test for shift" />
+        <name value="should be deleted shift with a new name" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.SAMPLE unit test for shift.should be deleted shift with a new name" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e632b06-1d0d-45ac-8e1d-cd9d4fe438f9" name="Default Changelist" comment="" />
+      <created>1556023836276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556023836276</updated>
+      <workItem from="1556023837549" duration="21941000" />
+      <workItem from="1556127555206" duration="1976000" />
+      <workItem from="1556129641873" duration="1599000" />
+      <workItem from="1556166792599" duration="4329000" />
+      <workItem from="1556289937909" duration="33026000" />
+      <workItem from="1556467942514" duration="112000" />
+      <workItem from="1556468070339" duration="3159000" />
+      <workItem from="1556511404408" duration="1874000" />
+      <workItem from="1556786700246" duration="2170000" />
+      <workItem from="1556792181139" duration="8453000" />
+      <workItem from="1556904644709" duration="75665000" />
+      <workItem from="1557396098254" duration="2700000" />
+      <workItem from="1558007504316" duration="2835000" />
+      <workItem from="1558064991813" duration="599000" />
+      <workItem from="1558326544924" duration="135000" />
+      <workItem from="1558326701845" duration="10842000" />
+      <workItem from="1558500378924" duration="3260000" />
+      <workItem from="1558505599519" duration="1015000" />
+      <workItem from="1558588216522" duration="5646000" />
+      <workItem from="1558678020539" duration="626000" />
+      <workItem from="1558678826541" duration="16919000" />
+      <workItem from="1559049355156" duration="364000" />
+      <workItem from="1559049753806" duration="1338000" />
+      <workItem from="1559122595136" duration="2542000" />
+      <workItem from="1559127205618" duration="436000" />
+      <workItem from="1559127850437" duration="4654000" />
+      <workItem from="1559194153962" duration="688000" />
+      <workItem from="1559209218045" duration="2200000" />
+      <workItem from="1559281358032" duration="1198000" />
+      <workItem from="1559536250645" duration="16836000" />
+      <workItem from="1559668506722" duration="3154000" />
+      <workItem from="1559706466477" duration="5724000" />
+      <workItem from="1559796941165" duration="647000" />
+      <workItem from="1560004429085" duration="604000" />
+      <workItem from="1560141055724" duration="10836000" />
+      <workItem from="1560159139831" duration="8058000" />
+      <workItem from="1560232544317" duration="5831000" />
+      <workItem from="1560315370966" duration="15192000" />
+      <workItem from="1560400935851" duration="10205000" />
+    </task>
+    <task id="LOCAL-00001" summary="Bug fixed.">
+      <created>1556130608631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556130608632</updated>
+    </task>
+    <task id="LOCAL-00002" summary="SQL Injection vulnerability removed.">
+      <created>1556312691968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556312691968</updated>
+    </task>
+    <task id="LOCAL-00003" summary="JSON responses rearranged.&#10;Error handling implemented.">
+      <created>1556467762086</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556467762086</updated>
+    </task>
+    <task id="LOCAL-00004" summary="JSON responses rearranged.&#10;Error handling implemented.">
+      <created>1556469340889</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556469340889</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Test Cases implemented for 02 entities.">
+      <created>1557079255486</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557079255486</updated>
+    </task>
+    <task id="LOCAL-00006" summary="folders refactored.">
+      <created>1557081232101</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557081232101</updated>
+    </task>
+    <task id="LOCAL-00007" summary="folders refactored.">
+      <created>1557081882415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557081882415</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test cases implemented.">
+      <created>1557134812660</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557134812660</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Promises implemented for service layer (staff-shift)">
+      <created>1557228061323</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557228061323</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Promises implemented for service layer (staff-shift)&#10;Service: async &amp; await&#10;Data: promises">
+      <created>1557233746727</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1557233746727</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Invalid Id error handled for async function.">
+      <created>1557292492702</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557292492702</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Shift Staff entity architecture updated.">
+      <created>1557314824427</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557314824427</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Mapper replaced.">
+      <created>1557323748183</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557323748183</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Testing Complete.">
+      <created>1557399651738</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1557399651738</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Testing Complete.">
+      <created>1557404277119</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1557404277119</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Error handling modified.">
+      <created>1558939903107</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1558939903107</updated>
+    </task>
+    <task id="LOCAL-00017" summary="After.">
+      <created>1560338527348</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560338527348</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 07m 12s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 07m 54s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 08m 36s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 08m 43s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 01s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 08s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 09s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 11s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 42s.xml">
+      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="289388000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1412" y="27" width="1320" height="741" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="npm" order="0" side_tool="true" weight="0.329653" />
+      <window_info id="Favorites" order="1" side_tool="true" weight="0.32922128" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.5023548" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info id="DB Browser" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.31979695" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32994923" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.3282572" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4720812" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32994923" />
+      <window_info anchor="bottom" id="DB Execution Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Json Parser" order="3" show_stripe_button="false" weight="0.329653" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.16435185" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32994923" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32318106" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32994923" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.41624364" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.52791876" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bug fixed." />
+    <MESSAGE value="SQL Injection vulnerability removed." />
+    <MESSAGE value="JSON responses rearranged.&#10;Error handling implemented." />
+    <MESSAGE value="Test Cases implemented for 02 entities." />
+    <MESSAGE value="folders refactored." />
+    <MESSAGE value="test cases implemented." />
+    <MESSAGE value="Promises implemented for service layer (staff-shift)" />
+    <MESSAGE value="Promises implemented for service layer (staff-shift)&#10;Service: async &amp; await&#10;Data: promises" />
+    <MESSAGE value="Invalid Id error handled for async function." />
+    <MESSAGE value="Shift Staff entity architecture updated." />
+    <MESSAGE value="Mapper replaced." />
+    <MESSAGE value="Testing Complete." />
+    <MESSAGE value="Error handling modified." />
+    <MESSAGE value="After." />
+    <option name="LAST_COMMIT_MESSAGE" value="After." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1447">
+          <caret line="457" column="12" selection-start-line="457" selection-start-column="12" selection-end-line="457" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="97" selection-start-line="2" selection-start-column="97" selection-end-line="2" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shift-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/attendance-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shift-working-day-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/staff-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift-working-day/routes/shift-working-day-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift-time-slot/routes/shift-time-slot-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff/routes/staff-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff-shift/routes/staff-shift-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/staff-shift-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shift-time-slot-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1771">
+          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff/data/staff-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift/data/shift-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift/routes/shift-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift/service/shift-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2507">
+          <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff/service/staff-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift-working-day/service/shift-working-day-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2660">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift-time-slot/data/shift-time-slot-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2576">
+          <caret line="6" column="88" selection-start-line="6" selection-start-column="88" selection-end-line="6" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shift-working-day/data/shift-working-day-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1386">
+          <caret line="3" column="96" selection-start-line="3" selection-start-column="96" selection-end-line="3" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff-shift/data/staff-shift-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff-shift/service/staff-shift-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attendance/data/bulk-attendance-data.js" />
+    <entry file="file://$PROJECT_DIR$/shift-time-slot/service/shift-time-slot-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3191">
+          <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.3/core-modules/console.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="199" column="2" selection-start-line="199" selection-start-column="2" selection-end-line="199" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attendance/service/attendance-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4158">
+          <caret line="198" column="15" selection-start-line="198" selection-start-column="15" selection-end-line="198" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attendance/routes/attendance-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Parser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="436" selection-start-line="436" selection-end-line="436" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attendance/data/attendance-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="123" column="30" lean-forward="true" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulk-upload/routes/bulk-upload-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulk-upload/service/bulk-upload-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="83" column="66" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulk-upload/data/bulk-upload-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2121">
+          <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
