@@ -1,6 +1,4 @@
 const jwt = require('jsonwebtoken');
-const jwt_options = require('../config/options');
-const util = require('util');
 
 
 
