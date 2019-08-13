@@ -9,7 +9,7 @@ const userRouter = require('./user/route/user-route');
 const noteRouter = require('./note/route/note-route');
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(cors());
