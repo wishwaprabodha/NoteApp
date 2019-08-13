@@ -1,10 +1,6 @@
 const data = require('../data/user-data');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
-const jwt_options = require('../../config/options');
-const uuidv1 = require('uuid/v1');
-const uuidv4 = require('uuid/v4');
 const saltRounds = 10;
 let token = '';
 
