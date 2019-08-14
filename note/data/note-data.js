@@ -1,7 +1,7 @@
 const conn = require('../../db/db');
 
 function getData(req, res) {
-    const query = "SELECT userId,noteDate,noteTopic,note from Note";
+    const query = "SELECT noteId,userId,noteDate,noteTopic,note from Note";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -20,7 +20,7 @@ function getData(req, res) {
 }
 
 function getDataByUser(req, res, id) {
-    const query = "SELECT Note.userId,Note.noteDate,Note.noteTopic,Note.note FROM Note,User WHERE Note.userId=User.userId AND Note.userId=" + conn.escape(id) + ";";
+    const query = "SELECT Note.noteId,Note.userId,Note.noteDate,Note.noteTopic,Note.note FROM Note,User WHERE Note.userId=User.userId AND Note.userId=" + conn.escape(id) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -39,7 +39,7 @@ function getDataByUser(req, res, id) {
 }
 
 function searchData(req, res, id) {
-    const query = "SELECT userId,noteDate,noteTopic,note FROM Note WHERE noteId=" + conn.escape(id) + ";";
+    const query = "SELECT noteId,userId,noteDate,noteTopic,note FROM Note WHERE noteId=" + conn.escape(id) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {

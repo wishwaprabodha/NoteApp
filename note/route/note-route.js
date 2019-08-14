@@ -18,6 +18,7 @@ router.post('/', function(req, res) {
     process.save(req, res).then();
 });
 
+/*
 router.put('/:id', function(req, res) {
     process.modifyById(req, res).then();
 });
@@ -25,5 +26,6 @@ router.put('/:id', function(req, res) {
 router.delete('/:id', function(req, res) {
     process.removeById(req, res).then();
 });
+*/
 
 module.exports = router;

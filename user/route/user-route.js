@@ -26,20 +26,13 @@ router.post('/login', function(req, res) {
     process.login(req, res).then();
 });
 
-router.post('/reset', function(req, res) {
-    process.reset(req, res).then();
+router.post('/', function(req, res) {
+    process.save(req, res).then();
 });
 
-router.post('/', middleware.authMiddleware, function(req, res) {
-    jwt.verify(req.token, 'secretKey', (err, authData) => {
-        if (err) {
-            res.status(403).send({
-                err: 'forbidden'
-            });
-        } else {
-            process.save(req, res).then();
-        }
-    });
+/*
+router.post('/reset', function(req, res) {
+    process.reset(req, res).then();
 });
 
 router.put('/:id', function(req, res) {
@@ -49,5 +42,6 @@ router.put('/:id', function(req, res) {
 router.delete('/:id', function(req, res) {
     process.removeById(req, res).then();
 });
+*/
 
 module.exports = router;
