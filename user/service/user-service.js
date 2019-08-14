@@ -58,15 +58,16 @@ async function loginData(req, res) {
             if (bcrypt.compareSync(req.body.userPasswordHash, output.data[0].userPasswordHash)) {
                 token = jwt.sign({ data: output.data }, 'secretKey');
                 res.send({
-                    STATUS: 1,
-                    'SUCCESS': 'AUTHENTICATED',
-                    Token: token
+                    status: 1,
+                    userId: output.data[0].userId,
+                    success: 'AUTHENTICATED',
+                    token: token
                 });
             } else {
                 res.status(200).send({
-                    STATUS: 0,
-                    'ERROR': 'INVALID PASSWORD',
-                })
+                    status: 0,
+                    error: 'INVALID PASSWORD',
+                });
             }
         }
     } catch (e) {

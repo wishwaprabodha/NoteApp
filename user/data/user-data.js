@@ -41,7 +41,7 @@ function searchData(req, res, id) {
 }
 
 function loginData(req, res, email) {
-    const query = "SELECT userEmail,userPasswordHash FROM User WHERE userEmail=" + conn.escape(email) + ";";
+    const query = "SELECT userId,userEmail,userPasswordHash FROM User WHERE userEmail=" + conn.escape(email) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {

@@ -12,6 +12,7 @@ router.get('/', middleware.authMiddleware, function(req, res) {
                 err: 'forbidden'
             });
         } else {
+           // console.log('user is: ',authData.data[0].userId);
             process.findAll(req, res).then();
         }
     });
