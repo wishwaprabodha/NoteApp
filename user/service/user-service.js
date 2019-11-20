@@ -2,6 +2,12 @@ const data = require('../data/user-data');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const saltRounds = 10;
+
+const systemConfig = require('../../middleware/config.json');
+
+
+const secretKey = systemConfig.session.jwtSecret;
+
 let token = '';
 
 async function find(req, res) {
@@ -56,7 +62,7 @@ async function loginData(req, res) {
             })
         } else {
             if (bcrypt.compareSync(req.body.userPasswordHash, output.data[0].userPasswordHash)) {
-                token = jwt.sign({ data: output.data }, 'secretKey');
+                token = jwt.sign({ data: output.data }, secretKey);
                 res.send({
                     status: 1,
                     userId: output.data[0].userId,

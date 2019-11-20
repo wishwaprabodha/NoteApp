@@ -1,0 +1,6 @@
+{
+    "session": {
+        "jwtSecret": "Qskfnvklsdnvdsvmldfmgldgd;mvslms",
+        "sessionTimeout": 1800000
+    }
+}

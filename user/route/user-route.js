@@ -3,10 +3,12 @@ const router = express.Router();
 const process = require('../service/user-service');
 const middleware = require('../../middleware/auth-middleware');
 const jwt = require('jsonwebtoken');
+const systemConfig = require('../../middleware/config.json');
 
 
+const secretKey = systemConfig.session.jwtSecret;
 router.get('/', middleware.authMiddleware, function(req, res) {
-    jwt.verify(req.token, 'secretKey', (err, authData) => {
+    jwt.verify(req.token, secretKey, (err, authData) => {
         if (err) {
             res.status(403).send({
                 err: 'forbidden'
