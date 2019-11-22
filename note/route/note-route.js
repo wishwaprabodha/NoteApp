@@ -7,11 +7,11 @@ router.get('/', function(req, res) {
 });
 */
 router.get('/:id', function(req, res) {
-    process.findById(req, res);
+    process.findById(req, res).then();
 });
 
 router.get('/user/:id', function(req, res) {
-    process.user(req, res);
+    process.user(req, res).then();
 });
 
 router.post('/', function(req, res) {

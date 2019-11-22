@@ -7,6 +7,7 @@ const systemConfig = require('../../middleware/config.json');
 
 
 const secretKey = systemConfig.session.jwtSecret;
+
 router.get('/', middleware.authMiddleware, function(req, res) {
     jwt.verify(req.token, secretKey, (err, authData) => {
         if (err) {
@@ -22,7 +23,7 @@ router.get('/', middleware.authMiddleware, function(req, res) {
 
 router.get('/:id', function(req, res) {
     console.log(req.param.id);
-    process.findById(req, res);
+    process.findById(req, res).then();
 });
 
 router.post('/login', function(req, res) {

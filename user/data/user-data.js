@@ -36,8 +36,6 @@ function searchData(req, res, id) {
             }
         });
     });
-    console.log(query);
-
 }
 
 function loginData(req, res, email) {

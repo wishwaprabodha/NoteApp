@@ -49,14 +49,12 @@ function searchData(req, res, id) {
                     })
                 });
             } else {
-                resolve(result, function() {
+                resolve(result, () => {
                     return result;
                 });
             }
         });
     });
-    console.log(query);
-
 }
 
 
