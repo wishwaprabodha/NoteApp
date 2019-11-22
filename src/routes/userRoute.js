@@ -1,28 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const process = require('../service/user-service');
-const middleware = require('../../middleware/auth-middleware');
+const process = require('../controllers/userController');
+const middleware = require('../middleware/auth-middleware');
 const jwt = require('jsonwebtoken');
-const systemConfig = require('../../middleware/config.json');
+const systemConfig = require('../middleware/config.json');
 
 
 const secretKey = systemConfig.session.jwtSecret;
 
-router.get('/', middleware.authMiddleware, function(req, res) {
-    jwt.verify(req.token, secretKey, (err, authData) => {
+router.get('/', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
         if (err) {
             res.status(403).send({
                 err: 'forbidden'
             });
         } else {
-           // console.log('user is: ',authData.data[0].userId);
             process.findAll(req, res).then();
         }
     });
 });
 
-router.get('/:id', function(req, res) {
-    console.log(req.param.id);
+router.get('/:id', middleware.authMiddleware, (req, res) => {
     process.findById(req, res).then();
 });
 
@@ -30,7 +28,7 @@ router.post('/login', function(req, res) {
     process.login(req, res).then();
 });
 
-router.post('/', function(req, res) {
+router.post('/', middleware.authMiddleware, (req, res) => {
     process.save(req, res).then();
 });
 

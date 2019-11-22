@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e632b06-1d0d-45ac-8e1d-cd9d4fe438f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/query-generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/note.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/data/note-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/note/data/note-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/route/note-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/note/route/note-route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/data/user-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/data/user-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/route/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/route/user-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/auth-middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/data/note-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/noteService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/route/note-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/noteRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/service/note-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/noteController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/data/user-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/route/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/userRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/service/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/userController.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -53,7 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowDB Browser.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.10.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,9 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/shift" />
-      <recent name="$PROJECT_DIR$/shift/routes" />
-      <recent name="$PROJECT_DIR$/shift/services" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/note/controllers" />
+      <recent name="$PROJECT_DIR$/note/routes" />
+      <recent name="$PROJECT_DIR$/note/services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -120,12 +131,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@39dbe380" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c191c2eb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@39dbe380" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5a914d1e" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c191c2eb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5452006b" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -183,6 +194,9 @@
       <workItem from="1560315370966" duration="15192000" />
       <workItem from="1560400935851" duration="10205000" />
       <workItem from="1574410589965" duration="2290000" />
+      <workItem from="1574424520525" duration="832000" />
+      <workItem from="1574425368049" duration="236000" />
+      <workItem from="1574425618315" duration="9978000" />
     </task>
     <task id="LOCAL-00001" summary="Bug fixed.">
       <created>1556130608631</created>
@@ -343,7 +357,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

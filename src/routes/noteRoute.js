@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const process = require('../service/note-service');
+const process = require('../controllers/noteController');
 /*
 router.get('/', function(req, res) {
     process.findAll(req, res).then();

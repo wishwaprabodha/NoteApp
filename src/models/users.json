@@ -1,0 +1,13 @@
+[
+  {
+    "table": "User",
+    "idColumn": "userId"
+  },
+  {
+    "userId": "userId",
+    "userName": "userName",
+    "userEmail": "userEmail",
+    "userPasswordHash": "userPasswordHash",
+    "modifiedTime": "modifiedTime"
+  }
+]

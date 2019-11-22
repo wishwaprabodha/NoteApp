@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const userRouter = require('./user/route/user-route');
-const noteRouter = require('./note/route/note-route');
+const userRouter = require('./src/routes/userRoute');
+const noteRouter = require('./src/routes/noteRoute');
 
 const app = express();
 const port = process.env.PORT;

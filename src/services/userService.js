@@ -1,7 +1,9 @@
+
 const conn = require('../../db/db');
-
-function getData(req, res) {
-    const query = "SELECT noteId,userId,noteDate,noteTopic,note from Note";
+const User = require('../models/user');
+/*
+function findAll(req, res) {
+    const query = 'SELECT ' + User.mappings.columns.userId + ',' + User.mappings.columns.userName + User.mappings.columns.userEmail + ' FROM ' + User.mappings.table +  ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -19,8 +21,8 @@ function getData(req, res) {
     });
 }
 
-function getDataByUser(req, res, id) {
-    const query = "SELECT Note.noteId,Note.userId,Note.noteDate,Note.noteTopic,Note.note FROM Note,User WHERE Note.userId=User.userId AND Note.userId=" + conn.escape(id) + ";";
+function findById(req, res, id) {
+    const query = 'SELECT ' + User.mappings.columns.userId + ',' + User.mappings.columns.userName + ',' + User.mappings.columns.userEmail + ' FROM ' + User.mappings.table + ' WHERE ' + User.mappings.columns.userId + '=' + conn.escape(id) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -38,29 +40,9 @@ function getDataByUser(req, res, id) {
     });
 }
 
-function searchData(req, res, id) {
-    const query = "SELECT noteId,userId,noteDate,noteTopic,note FROM Note WHERE noteId=" + conn.escape(id) + ";";
-    return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
-            if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
-            } else {
-                resolve(result, () => {
-                    return result;
-                });
-            }
-        });
-    });
-}
-
-
-function addData(req, res, data) {
-    let query = "INSERT INTO Note(userId,noteDate,noteTopic,note)VALUES(" + conn.escape(data.userId) + "," +
-        conn.escape(data.noteDate) + "," + conn.escape(data.noteTopic) + "," + conn.escape(data.note) + ")";
+function login(req, res, email) {
+    const query = 'SELECT ' + User.mappings.columns.userId + ',' + User.mappings.columns.userName + ',' + User.mappings.columns.userEmail + ',' + User.mappings.columns.userPasswordHash
+        + ' FROM ' + User.mappings.table + ' WHERE ' + User.mappings.columns.userEmail + '=' + conn.escape(email) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -78,9 +60,51 @@ function addData(req, res, data) {
     });
 }
 
-function editData(req, res, data, id) {
-    let query = "UPDATE User SET noteDate=" + conn.escape(data.noteDate) + ",noteTopic=" + conn.escape(data.noteTopic) +
-        ",note=" + conn.escape(data.note) + " WHERE noteId=" + conn.escape(id) + ";";
+
+function save(req, res, data) {
+   let query = 'INSERT INTO ' + User.mappings.table + '(' + User.mappings.columns.userName + ',' + User.mappings.columns.userEmail + ',' + User.mappings.columns.userPasswordHash +')VALUES(' + conn.escape(data.userName) + ','
+    + conn.escape(data.userEmail) + ',' + conn.escape(data.userPasswordHash) + ")";
+    return new Promise((resolve, reject) => {
+        conn.db.query(query, (err, result) => {
+            if (err) {
+                reject(err, function() {
+                    res.status(200).send({
+                        'ERROR': err,
+                    })
+                });
+            } else {
+                resolve(result, function() {
+                    return result;
+                });
+            }
+        });
+    });
+}
+
+function update(req, res, data, id) {
+    let query = 'UPDATE ' + User.mappings.table +  SET userName=" + conn.escape(data.userName) + ",userEmail=" + conn.escape(data.userEmail) +
+        " WHERE userId=" + conn.escape(id) + ";";
+    return new Promise((resolve, reject) => {
+        conn.db.query(query, [data.userName, data.userName, id],
+            (err, result) => {
+                if (err) {
+                    reject(err, function() {
+                        res.status(200).send({
+                            'ERROR': err,
+                        })
+                    });
+                } else {
+                    resolve(result, function() {
+                        return result;
+                    });
+                }
+            });
+    });
+}
+
+function resetData(req, res, data) {
+    let query = "UPDATE User SET userPasswordHash=" + conn.escape(data.userPasswordHash) + " WHERE userEmail=" +
+        conn.escape(data.userEmail) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -99,7 +123,7 @@ function editData(req, res, data, id) {
 }
 
 function deleteData(req, res, id) {
-    let query = "DELETE FROM Note WHERE noteId =" + conn.escape(id) + ";";
+    let query = "DELETE FROM User WHERE userId =" + conn.escape(id) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -123,6 +147,8 @@ module.exports = {
     add: addData,
     edit: editData,
     search: searchData,
-    user: getDataByUser,
+    reset: resetData,
+    login: loginData,
     delete: deleteData
 };
+*/
