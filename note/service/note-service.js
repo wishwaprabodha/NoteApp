@@ -136,7 +136,6 @@ async function deleteData(req, res) {
 }
 
 
-
 module.exports = {
     findAll: find,
     findById: search,
