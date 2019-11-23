@@ -1,6 +1,4 @@
 const mysql = require('mysql');
-const modelUser = require('../src/models/users.json');
-const obj = {userName: 'Wishwa', userEmail: 2, userPasswordHash: 'hash'};
 
 function escape(value) {
     return mysql.escape(value);

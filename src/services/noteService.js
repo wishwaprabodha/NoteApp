@@ -1,7 +1,9 @@
 const conn = require('../../db/db');
+const Note = require('../models/note.json');
+const dbHelper = require('../../db/query-generator');
 
-function getData(req, res) {
-    const query = "SELECT noteId,userId,noteDate,noteTopic,note from Note";
+function findAll(req, res) {
+    const query = dbHelper.findAll(Note);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -19,8 +21,8 @@ function getData(req, res) {
     });
 }
 
-function getDataByUser(req, res, id) {
-    const query = "SELECT Note.noteId,Note.userId,Note.noteDate,Note.noteTopic,Note.note FROM Note,User WHERE Note.userId=User.userId AND Note.userId=" + conn.escape(id) + ";";
+function findByUserId(req, res, id) {
+    const query = 'SELECT * FROM ' + Note[0].table + ' WHERE ' + Note[1].userId + '=' + conn.escape(id) + ';';
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -38,8 +40,8 @@ function getDataByUser(req, res, id) {
     });
 }
 
-function searchData(req, res, id) {
-    const query = "SELECT noteId,userId,noteDate,noteTopic,note FROM Note WHERE noteId=" + conn.escape(id) + ";";
+function findById(req, res, id) {
+    const query = dbHelper.findById(Note, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -58,9 +60,8 @@ function searchData(req, res, id) {
 }
 
 
-function addData(req, res, data) {
-    let query = "INSERT INTO Note(userId,noteDate,noteTopic,note)VALUES(" + conn.escape(data.userId) + "," +
-        conn.escape(data.noteDate) + "," + conn.escape(data.noteTopic) + "," + conn.escape(data.note) + ")";
+function save(req, res, data) {
+    let query = dbHelper.save(Note, data);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -78,9 +79,8 @@ function addData(req, res, data) {
     });
 }
 
-function editData(req, res, data, id) {
-    let query = "UPDATE User SET noteDate=" + conn.escape(data.noteDate) + ",noteTopic=" + conn.escape(data.noteTopic) +
-        ",note=" + conn.escape(data.note) + " WHERE noteId=" + conn.escape(id) + ";";
+function update(req, res, data, id) {
+    let query = dbHelper.update(Note, data, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -98,8 +98,8 @@ function editData(req, res, data, id) {
     });
 }
 
-function deleteData(req, res, id) {
-    let query = "DELETE FROM Note WHERE noteId =" + conn.escape(id) + ";";
+function remove(req, res, id) {
+    let query = dbHelper.delete(Note, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
@@ -119,10 +119,10 @@ function deleteData(req, res, id) {
 
 
 module.exports = {
-    get: getData,
-    add: addData,
-    edit: editData,
-    search: searchData,
-    user: getDataByUser,
-    delete: deleteData
+    findAll: findAll,
+    save: save,
+    update: update,
+    findById: findById,
+    findByUserId: findByUserId,
+    remove: remove
 };

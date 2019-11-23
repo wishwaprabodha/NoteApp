@@ -10,11 +10,11 @@ const secretKey = systemConfig.session.jwtSecret;
 
 let token = '';
 
-async function find(req, res) {
+async function findAll(req, res) {
     let output = {};
     try {
-        output.data = await data.get(req, res);
-        output.metadata = { massage: output.data.length + " rows retrieved." };
+        output.data = await data.FindAll(req, res);
+        output.metadata = {massage: output.data.length + " rows retrieved."};
         if (output.data.length === 0) {
             res.status(200).send({
                 'ERROR': 'NO DATA FOUND',
@@ -29,12 +29,12 @@ async function find(req, res) {
     }
 }
 
-async function search(req, res) {
+async function findById(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.search(req, res, id);
-        output.metadata = { massage: "User Id: " + id + " Retrieved." };
+        output.data = await data.FindById(req, res, id);
+        output.metadata = {massage: "User Id: " + id + " Retrieved."};
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'NO DATA FOUND',
@@ -50,19 +50,19 @@ async function search(req, res) {
 }
 
 
-async function loginData(req, res) {
+async function login(req, res) {
     let output = {};
     let email = req.body.userEmail;
     try {
-        output.data = await data.login(req, res, email);
-        output.metadata = { massage: "User Email : " + email + " Retreived." };
+        output.data = await data.Login(req, res, email);
+        output.metadata = {massage: "User Email : " + email + " Retreived."};
         if (output.data.length === 0) {
             res.status(200).send({
                 'ERROR': 'NO DATA FOUND',
             })
         } else {
             if (bcrypt.compareSync(req.body.userPasswordHash, output.data[0].userPasswordHash)) {
-                token = jwt.sign({ data: output.data }, secretKey);
+                token = jwt.sign({data: output.data}, secretKey);
                 res.send({
                     status: 1,
                     userId: output.data[0].userId,
@@ -83,7 +83,7 @@ async function loginData(req, res) {
     }
 }
 
-async function resetData(req, res) {
+async function reset(req, res) {
     let output = {};
     let passphrase = req.body.userPasswordHash;
     let hashPassword = bcrypt.hashSync(passphrase, saltRounds);
@@ -93,8 +93,8 @@ async function resetData(req, res) {
     };
     console.log(obj);
     try {
-        output.data = await data.reset(req, res, obj);
-        output.metadata = { massage: "User Email : " + req.body.userEmail + " Password Reseted." };
+        output.data = await data.Reset(req, res, obj);
+        output.metadata = {massage: "User Email : " + req.body.userEmail + " Password Reseted."};
         if (output.data.affectedRows === 0) {
             res.status(200).send({
                 'ERROR': 'User Modification failed',
@@ -110,8 +110,7 @@ async function resetData(req, res) {
 }
 
 
-
-async function add(req, res) {
+async function save(req, res) {
     let output = {};
     let passphrase = req.body.userPasswordHash;
     let hashPassword = bcrypt.hashSync(passphrase, saltRounds);
@@ -121,8 +120,8 @@ async function add(req, res) {
         userPasswordHash: hashPassword
     };
     try {
-        output.data = await data.add(req, res, obj);
-        output.metadata = { massage: "User Record Added." };
+        output.data = await data.Save(req, res, obj);
+        output.metadata = {massage: "User Record Added."};
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'User Insertion failed',
@@ -145,8 +144,8 @@ async function update(req, res) {
         userEmail: req.body.userEmail,
     };
     try {
-        output.data = await data.edit(req, res, obj, id);
-        output.metadata = { massage: "User Id : " + id + " Updated." };
+        output.data = await data.Update(req, res, obj, id);
+        output.metadata = {massage: "User Id : " + id + " Updated."};
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'User Modification failed',
@@ -161,12 +160,12 @@ async function update(req, res) {
     }
 }
 
-async function deleteData(req, res) {
+async function remove(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.delete(req, res, id);
-        output.metadata = { massage: "User Id : " + id + " Deleted." };
+        output.data = await data.Remove(req, res, id);
+        output.metadata = {massage: "User Id : " + id + " Deleted."};
         if (output.data.affectedRows === 0) {
             res.status(200).send({
                 'ERROR': 'User Deletion failed',
@@ -182,14 +181,12 @@ async function deleteData(req, res) {
 }
 
 
-
 module.exports = {
-    findAll: find,
-    findById: search,
-    save: add,
-    modifyById: update,
-    removeById: deleteData,
-    reset: resetData,
-    login: loginData,
-    Token: token
+    findAll: findAll,
+    findById: findById,
+    save: save,
+    update: update,
+    remove: remove,
+    reset: reset,
+    login: login
 };

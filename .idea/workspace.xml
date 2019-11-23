@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e632b06-1d0d-45ac-8e1d-cd9d4fe438f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/note.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/query-generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/query-generator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/noteController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/noteController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/note.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/noteRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/noteRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/userRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/noteService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/noteService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +32,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="testDB: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -118,12 +143,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c191c2eb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@49d7daf9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c191c2eb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5452006b" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@49d7daf9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@47ef4bf8" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -184,7 +209,7 @@
       <workItem from="1574424520525" duration="832000" />
       <workItem from="1574425368049" duration="236000" />
       <workItem from="1574425618315" duration="10250000" />
-      <workItem from="1574502863245" duration="6640000" />
+      <workItem from="1574502863245" duration="11289000" />
     </task>
     <task id="LOCAL-00001" summary="Bug fixed.">
       <created>1556130608631</created>
@@ -312,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574442381341</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Query Generator updated.">
+      <created>1574511045189</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574511045189</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -361,6 +393,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Bug fixed." />
     <MESSAGE value="SQL Injection vulnerability removed." />
     <MESSAGE value="JSON responses rearranged.&#10;Error handling implemented." />
@@ -376,7 +409,8 @@
     <MESSAGE value="Error handling modified." />
     <MESSAGE value="After." />
     <MESSAGE value="Architecture changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Architecture changes." />
+    <MESSAGE value="Query Generator updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Query Generator updated." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

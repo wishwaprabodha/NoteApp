@@ -1,31 +1,83 @@
 const express = require('express');
 const router = express.Router();
 const process = require('../controllers/noteController');
-/*
-router.get('/', function(req, res) {
-    process.findAll(req, res).then();
-});
-*/
-router.get('/:id', function(req, res) {
-    process.findById(req, res).then();
+const middleware = require('../middleware/auth-middleware');
+const jwt = require('jsonwebtoken');
+const systemConfig = require('../middleware/config.json');
+
+const secretKey = systemConfig.session.jwtSecret;
+
+
+router.get('/', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.findAll(req, res).then();
+        }
+    });
 });
 
-router.get('/user/:id', function(req, res) {
-    process.user(req, res).then();
+router.get('/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.findById(req, res).then();
+        }
+    });
 });
 
-router.post('/', function(req, res) {
-    process.save(req, res).then();
+router.get('/user/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.findByUserId(req, res).then();
+        }
+    });
 });
 
-/*
-router.put('/:id', function(req, res) {
-    process.modifyById(req, res).then();
+router.post('/', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.save(req, res).then();
+        }
+    });
 });
 
-router.delete('/:id', function(req, res) {
-    process.removeById(req, res).then();
+router.put('/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.update(req, res).then();
+        }
+    });
 });
-*/
+
+router.delete('/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.remove(req, res).then();
+        }
+    });
+});
 
 module.exports = router;

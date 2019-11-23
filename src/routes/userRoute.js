@@ -21,29 +21,69 @@ router.get('/', middleware.authMiddleware, (req, res) => {
 });
 
 router.get('/:id', middleware.authMiddleware, (req, res) => {
-    process.findById(req, res).then();
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.findById(req, res).then();
+        }
+    });
 });
 
-router.post('/login', function(req, res) {
+router.post('/login', (req, res) => {
     process.login(req, res).then();
 });
 
 router.post('/', middleware.authMiddleware, (req, res) => {
-    process.save(req, res).then();
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.save(req, res).then();
+        }
+    });
 });
 
-/*
-router.post('/reset', function(req, res) {
-    process.reset(req, res).then();
+
+router.post('/reset', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.reset(req, res).then();
+        }
+    });
 });
 
-router.put('/:id', function(req, res) {
-    process.modifyById(req, res).then();
+router.put('/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.update(req, res).then();
+        }
+    });
 });
 
-router.delete('/:id', function(req, res) {
-    process.removeById(req, res).then();
+router.delete('/:id', middleware.authMiddleware, (req, res) => {
+    jwt.verify(req.token, secretKey, (err) => {
+        if (err) {
+            res.status(403).send({
+                err: 'forbidden'
+            });
+        } else {
+            process.remove(req, res).then();
+        }
+    });
 });
-*/
+
 
 module.exports = router;

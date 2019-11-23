@@ -1,0 +1,11 @@
+[
+  {
+    "table": "Note",
+    "idColumn": "noteId"
+  },
+  {
+    "userId": "userId",
+    "noteDate": "noteDate",
+    "noteTopic": "noteTopic"
+  }
+]
