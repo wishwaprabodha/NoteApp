@@ -1,36 +1,49 @@
+const mysql = require('mysql');
 const modelUser = require('../src/models/users.json');
-const db = require('/db/db');
+const obj = {userName: 'Wishwa', userEmail: 2, userPasswordHash: 'hash'};
 
-exports.findAll = function (model) {
+function escape(value) {
+    return mysql.escape(value);
+}
+
+exports.findAll = (model) => {
     return 'SELECT * FROM ' + model[0].table + ';';
 };
 
-exports.findById = function (model, idColumn) {
-    return 'SELECT * FROM ' + model[0].table + ' WHERE ' + model[0].idColumn + '=' + db.escape(idColumn) + ';';
+exports.findById = (model, idColumn) => {
+    return 'SELECT * FROM ' + model[0].table + ' WHERE ' + model[0].idColumn + '=' + escape(idColumn) + ';';
 };
 
-exports.delete = function (model, idColumn) {
-    return 'DELETE FROM ' + model[0].table + ' WHERE ' + model[0].idColumn + '=' + db.escape(idColumn) + ';';
+
+exports.delete = (model, idColumn) => {
+    return 'DELETE FROM ' + model[0].table + ' WHERE ' + model[0].idColumn + '=' + escape(idColumn) + ';';
 };
 
-exports.save = function (model, idColumn) {
-    return 'DELETE FROM ' + model[0].table + ' WHERE ' + model[0].idColumn + '=' + db.escape(idColumn) + ';';
-};
-
-findX = function (model) {
-    const _query = 'SELECT * FROM ';
-    const _table = model[0].table;
+exports.save = (model, obj) => {
+    let _prefix = 'INSERT INTO ' + model[0].table + ' (';
     const _columns = model[1];
-    let columns = [];
-    for (let key in _columns) {
-        columns.push(_columns[key]);
+    let _query;
+    for (let col in _columns) {
+        _prefix += _columns[col] + ',';
     }
-    console.log(_query + _table);
-    for (let col in columns) {
-        console.log(columns[col])
+    _query = _prefix.substring(0, _prefix.length - 1);
+    _query += ') VALUES (';
+    for (let key in obj) {
+        _query += escape(obj[key]) + ',';
     }
+    _query = _query.substring(0, _query.length - 1);
+    return _query + ');';
 };
 
-console.log(findAll(modelUser));
+exports.update = (model, obj, idColumn) => {
+    let _prefix = 'UPDATE ' + model[0].table + ' SET ';
+    const _columns = model[1];
+    let _query;
+    for (let col in _columns) {
+        _prefix += _columns[col] + '=' + escape(obj[_columns[col]]) + ',';
+    }
+    _query = _prefix.substring(0, _prefix.length - 1);
+    _query += ' WHERE ' + model[0].idColumn + '=' + idColumn + ';';
+    return _query;
+};
 
-findX(modelUser);
