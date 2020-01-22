@@ -91,7 +91,6 @@ async function reset(req, res) {
         userEmail: req.body.userEmail,
         userPasswordHash: hashPassword
     };
-    console.log(obj);
     try {
         output.data = await data.Reset(req, res, obj);
         output.metadata = {massage: "User Email : " + req.body.userEmail + " Password Reseted."};
@@ -114,6 +113,7 @@ async function save(req, res) {
     let output = {};
     let passphrase = req.body.userPasswordHash;
     let hashPassword = bcrypt.hashSync(passphrase, saltRounds);
+    console.log(hashPassword);
     let obj = {
         userName: req.body.userName,
         userEmail: req.body.userEmail,

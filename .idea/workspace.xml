@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e632b06-1d0d-45ac-8e1d-cd9d4fe438f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,13 +58,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowDB Browser.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aspitio/Akura" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,7 +81,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,16 +92,9 @@
       <recent name="$PROJECT_DIR$/note/services" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="ls" />
     </option>
   </component>
   <component name="RunManager" selected="Node.js.server.js">
@@ -129,23 +124,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@49d7daf9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@49d7daf9" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@47ef4bf8" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -201,7 +188,9 @@
       <workItem from="1574424520525" duration="832000" />
       <workItem from="1574425368049" duration="236000" />
       <workItem from="1574425618315" duration="10250000" />
-      <workItem from="1574502863245" duration="13120000" />
+      <workItem from="1574502863245" duration="13762000" />
+      <workItem from="1575796630385" duration="161000" />
+      <workItem from="1575796808092" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="Bug fixed.">
       <created>1556130608631</created>
@@ -343,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574517121039</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Readme added.">
+      <created>1574518749073</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574518749073</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -410,8 +406,43 @@
     <MESSAGE value="Architecture changes." />
     <MESSAGE value="Query Generator updated." />
     <MESSAGE value="Added JWT secret verification with custom JSON ORM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JWT secret verification with custom JSON ORM" />
+    <MESSAGE value="Readme added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme added." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="742" y="311" key="FileChooserDialogImpl" timestamp="1575796857163">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="742" y="311" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1575796857163" />
+    <state width="1894" height="249" key="GridCell.Tab.0.bottom" timestamp="1575796858915">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1894" height="249" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858915" />
+    <state width="1894" height="249" key="GridCell.Tab.0.center" timestamp="1575796858914">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1894" height="249" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858914" />
+    <state width="1894" height="249" key="GridCell.Tab.0.left" timestamp="1575796858914">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1894" height="249" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858914" />
+    <state width="1894" height="249" key="GridCell.Tab.0.right" timestamp="1575796858915">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1894" height="249" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858915" />
+    <state x="434" y="188" width="1052" height="737" key="SettingsEditor" timestamp="1575796791695">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="434" y="188" width="1052" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1575796791695" />
+    <state x="624" y="252" width="672" height="678" key="run.anything.popup" timestamp="1575796829569">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="624" y="252" width="672" height="678" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1575796829569" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1575796684080">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1575796684080" />
   </component>
 </project>
