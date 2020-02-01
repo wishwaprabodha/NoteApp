@@ -37,7 +37,9 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    jwt.verify(req.token, secretKey, (err) => {
+    process.save(req, res).then();
+
+/*    jwt.verify(req.token, secretKey, (err) => {
         if (err) {
             res.status(403).send({
                 err: 'forbidden'
@@ -45,7 +47,7 @@ router.post('/', (req, res) => {
         } else {
             process.save(req, res).then();
         }
-    });
+    });*/
 });
 
 

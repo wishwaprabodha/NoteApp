@@ -40,6 +40,28 @@ function findById(req, res, id) {
     });
 }
 
+
+function findByUserEmail(req, res, email) {
+    const query = 'SELECT ' + User[0].idColumn
+        + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
+    return new Promise((resolve, reject) => {
+        conn.db.query(query, (err, result) => {
+            if (err) {
+                reject(err, function () {
+                    res.status(200).send({
+                        'ERROR': err,
+                    })
+                });
+            } else {
+                resolve(result, function () {
+                    return result;
+                });
+            }
+        });
+    });
+}
+
+
 function login(req, res, email) {
     const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ',' + User[1].userPasswordHash
         + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
@@ -146,6 +168,7 @@ module.exports = {
     FindById: findById,
     Reset: reset,
     Login: login,
-    Remove: remove
+    Remove: remove,
+    FindEmail:findByUserEmail
 };
 

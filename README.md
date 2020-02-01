@@ -2,36 +2,25 @@
 
 Implementation of Backend API for Note Taking Application.
 
-## MySQL Configurations
-
-#### Since docker runs in a different network, docker application cannot access directly to your local or remote DB. 
-1. Host the mySQL Database in a remote server or your localhost machine.
-2. If using a remote server, change the bind-address in mysql.conf file from 127.0.0.1 to 0.0.0.0 ``` /etc/mysql/my.conf ``` (might be in a  different location according to your running OS).  
-3. In the remote MySQL server, grant access from the remote host. (Use https://www.whatsmyip.org to get your current IP).
-   
-   ``` mysql> GRANT ALL ON <dbName>.* TO 'root'@'<remoteHostIP>' IDENTIFIED BY 'root' WITH GRANT OPTION; ```
-4. Flush privileges
-
-   ``` mysql> FLUSH PRIVILEGES; ```
-
-***
-
-## Run with Docker
+## Run with docker
 
 1. Install docker if not installed.
-2. Run ``` docker build -t <tagname> . ``` to build
-3.  Run ``` docker run <tagname> --network="host"```
+2. Clone the Repository.
+3. Run ``` docker build -t <tagname> . ``` to build.
+4. Run ``` docker run --network="host" <tagname>```
+5. Additional docker commands.
+   6.  Remove all docker containers. ``` docker rm -vf $(docker ps -a -q) ```
+   7.  Remove all docker images. ``` docker rmi -f $(docker images -a -q) ```
 
 ***
 
-
-## Installation
+## Run without docker
 
 1. Clone the Repository.
 2. Upload the database schema to your localhost database.
 3. Update the .env file accordingly.
-3.  Run ``` npm install ```
-4. Run the project on ``` npm start ```.
+4.  Run ``` npm install ```
+5. Run the project on ``` npm start ```.
 
 ***
 

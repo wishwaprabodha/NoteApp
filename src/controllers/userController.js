@@ -111,23 +111,27 @@ async function reset(req, res) {
 
 async function save(req, res) {
     let output = {};
-    let passphrase = req.body.userPasswordHash;
-    let hashPassword = bcrypt.hashSync(passphrase, saltRounds);
-    console.log(hashPassword);
     let obj = {
         userName: req.body.userName,
         userEmail: req.body.userEmail,
-        userPasswordHash: hashPassword
+        userPasswordHash:  bcrypt.hashSync(req.body.userPasswordHash, saltRounds)
     };
     try {
-        output.data = await data.Save(req, res, obj);
-        output.metadata = {massage: "User Record Added."};
-        if (!Object.keys(output.data).length) {
+        let verify = await data.FindEmail(req,res,obj.userEmail);
+        if(verify.length > 0){
             res.status(200).send({
-                'ERROR': 'User Insertion failed',
+                'ERROR': 'User email exists',
             })
-        } else {
-            res.send(output);
+        }else {
+            output.data = await data.Save(req, res, obj);
+            output.metadata = {massage: "User Record Added."};
+            if (!Object.keys(output.data).length) {
+                res.status(200).send({
+                    'ERROR': 'User Insertion failed',
+                })
+            } else {
+                res.send(output);
+            }
         }
     } catch (e) {
         res.status(200).send({
