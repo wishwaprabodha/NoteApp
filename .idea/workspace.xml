@@ -68,8 +68,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowDB Browser.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aspitio/Akura" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -101,6 +102,20 @@
     <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -119,6 +134,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Mocha.SAMPLE unit test for shift.should be deleted shift with a new name" />
       </list>
     </recent_temporary>
@@ -191,6 +207,7 @@
       <workItem from="1574502863245" duration="13762000" />
       <workItem from="1575796630385" duration="161000" />
       <workItem from="1575796808092" duration="51000" />
+      <workItem from="1580494426905" duration="4143000" />
     </task>
     <task id="LOCAL-00001" summary="Bug fixed.">
       <created>1556130608631</created>
@@ -342,35 +359,6 @@
     <option name="localTasksCounter" value="22" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 07m 12s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 07m 54s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 08m 36s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 08m 43s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 01s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 08s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 09s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 11s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="SAMPLE_unit_test_for_shift_should_be_deleted_shift_with_a_new_name - 2019.05.02 at 17h 10m 42s.xml">
-      <configuration name="SAMPLE unit test for shift.should be deleted shift with a new name" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -412,26 +400,34 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1069" y="71" width="721" height="971" key="#Dockerfile" timestamp="1580494452065">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1069" y="71" width="721" height="971" key="#Dockerfile/0.27.1920.1053@0.27.1920.1053" timestamp="1580494452065" />
+    <state x="1030" y="215" width="800" height="684" key="#Notifications" timestamp="1580494438255">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1030" y="215" width="800" height="684" key="#Notifications/0.27.1920.1053@0.27.1920.1053" timestamp="1580494438255" />
     <state x="742" y="311" key="FileChooserDialogImpl" timestamp="1575796857163">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="742" y="311" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1575796857163" />
-    <state width="1894" height="249" key="GridCell.Tab.0.bottom" timestamp="1575796858915">
+    <state width="1894" height="249" key="GridCell.Tab.0.bottom" timestamp="1580549898682">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1894" height="249" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858915" />
-    <state width="1894" height="249" key="GridCell.Tab.0.center" timestamp="1575796858914">
+    <state width="1894" height="249" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1580549898682" />
+    <state width="1894" height="249" key="GridCell.Tab.0.center" timestamp="1580549898681">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1894" height="249" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858914" />
-    <state width="1894" height="249" key="GridCell.Tab.0.left" timestamp="1575796858914">
+    <state width="1894" height="249" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1580549898681" />
+    <state width="1894" height="249" key="GridCell.Tab.0.left" timestamp="1580549898680">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1894" height="249" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858914" />
-    <state width="1894" height="249" key="GridCell.Tab.0.right" timestamp="1575796858915">
+    <state width="1894" height="249" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1580549898680" />
+    <state width="1894" height="249" key="GridCell.Tab.0.right" timestamp="1580549898682">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1894" height="249" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575796858915" />
+    <state width="1894" height="249" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1580549898681" />
     <state x="434" y="188" width="1052" height="737" key="SettingsEditor" timestamp="1575796791695">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

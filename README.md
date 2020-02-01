@@ -1,6 +1,29 @@
-# Note Taking App (NodeJS) 
+# Note Taking App (NodeJS + Docker + MySQL + JWT) 
 
 Implementation of Backend API for Note Taking Application.
+
+## MySQL Configurations
+
+#### Since docker runs in a different network, docker application cannot access directly to your local or remote DB. 
+1. Host the mySQL Database in a remote server or your localhost machine.
+2. If using a remote server, change the bind-address in mysql.conf file from 127.0.0.1 to 0.0.0.0 ``` /etc/mysql/my.conf ``` (might be in a  different location according to your running OS).  
+3. In the remote MySQL server, grant access from the remote host. (Use https://www.whatsmyip.org to get your current IP).
+   
+   ``` mysql> GRANT ALL ON <dbName>.* TO 'root'@'<remoteHostIP>' IDENTIFIED BY 'root' WITH GRANT OPTION; ```
+4. Flush privileges
+
+   ``` mysql> FLUSH PRIVILEGES; ```
+
+***
+
+## Run with Docker
+
+1. Install docker if not installed.
+2. Run ``` docker build -t <tagname> . ``` to build
+3.  Run ``` docker run <tagname> --network="host"```
+
+***
+
 
 ## Installation
 

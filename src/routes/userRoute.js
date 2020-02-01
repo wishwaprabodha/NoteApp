@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
     process.login(req, res).then();
 });
 
-router.post('/', middleware.authMiddleware, (req, res) => {
+router.post('/', (req, res) => {
     jwt.verify(req.token, secretKey, (err) => {
         if (err) {
             res.status(403).send({
