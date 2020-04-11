@@ -24,7 +24,7 @@ async function findById(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.findById(req, res, id);
+        output.data = await data.findByUserId(req, res, id);
         output.metadata = { massage: "Note Id: " + id + " Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({

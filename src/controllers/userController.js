@@ -62,7 +62,7 @@ async function login(req, res) {
             })
         } else {
             if (bcrypt.compareSync(req.body.userPasswordHash, output.data[0].userPasswordHash)) {
-                token = jwt.sign({data: output.data}, secretKey);
+                token = jwt.sign({userId: output.data[0].userId, secret: secretKey}, secretKey);
                 res.send({
                     status: 1,
                     userId: output.data[0].userId,
