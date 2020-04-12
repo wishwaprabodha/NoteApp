@@ -4,11 +4,11 @@ const data = require('../services/noteService');
 async function findAll(req, res) {
     let output = {};
     try {
-        output.data = await data.findAll(req, res);
+        output.data = await data.findAll();
         output.metadata = { massage: output.data.length + " rows retrieved." };
         if (output.data.length === 0) {
             res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
+                'DATA': 'NO DATA FOUND',
             })
         } else {
             res.send(output);
@@ -28,7 +28,7 @@ async function findById(req, res) {
         output.metadata = { massage: "Note Id: " + id + " Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
+                'DATA': 'NO DATA FOUND',
             })
         } else {
             res.send(output);
@@ -65,7 +65,6 @@ async function findByUserId(req, res) {
 async function save(req, res) {
     let output = {};
     let obj = {
-        noteId: req.body.noteId,
         userId: req.body.userId,
         noteDate: req.body.noteDate,
         noteTopic: req.body.noteTopic,

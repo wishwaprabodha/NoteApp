@@ -13,11 +13,11 @@ let token = '';
 async function findAll(req, res) {
     let output = {};
     try {
-        output.data = await data.FindAll(req, res);
+        output.data = await data.FindAll();
         output.metadata = {massage: output.data.length + " rows retrieved."};
         if (output.data.length === 0) {
             res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
+                'DATA': 'NO DATA FOUND',
             })
         } else {
             res.send(output);
@@ -37,7 +37,7 @@ async function findById(req, res) {
         output.metadata = {massage: "User Id: " + id + " Retrieved."};
         if (!Object.keys(output.data).length) {
             res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
+                'DATA': 'NO DATA FOUND',
             })
         } else {
             res.send(output);

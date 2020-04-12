@@ -2,20 +2,14 @@ const conn = require('../../db/db');
 const Note = require('../models/note.json');
 const dbHelper = require('../../db/query-generator');
 
-function findAll(req, res) {
+function findAll() {
     const query = dbHelper.findAll(Note);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, function() {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });
@@ -26,15 +20,9 @@ function findByUserId(req, res, id) {
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, function() {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });
@@ -45,15 +33,9 @@ function findById(req, res, id) {
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, () => {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });
@@ -65,15 +47,9 @@ function save(req, res, data) {
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, function() {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });
@@ -84,15 +60,9 @@ function update(req, res, data, id) {
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, function() {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });
@@ -103,15 +73,9 @@ function remove(req, res, id) {
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {
-                reject(err, function() {
-                    res.status(200).send({
-                        'ERROR': err,
-                    })
-                });
+                reject(err);
             } else {
-                resolve(result, function() {
-                    return result;
-                });
+                resolve(result);
             }
         });
     });

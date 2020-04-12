@@ -6,6 +6,7 @@
   {
     "userId": "userId",
     "noteDate": "noteDate",
-    "noteTopic": "noteTopic"
+    "noteTopic": "noteTopic",
+    "note": "note"
   }
 ]
