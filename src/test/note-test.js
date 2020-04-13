@@ -27,7 +27,7 @@ module.exports = describe('Test Route with Token', function() {
             });
     });
 
-    it("Get all notes", function (done) {
+    it.skip("Get all notes", function (done) {
         let decodeToken = jwt.decode(token, { complete: true });
         console.log('token: ' + decodeToken.payload.userId);        
         api.get("/")
