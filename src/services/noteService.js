@@ -17,6 +17,7 @@ function findAll() {
 
 function findByUserId(req, res, id) {
     const query = 'SELECT * FROM ' + Note[0].table + ' WHERE ' + Note[1].userId + '=' + conn.escape(id) + ';';
+    console.log(query);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
             if (err) {

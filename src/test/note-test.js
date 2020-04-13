@@ -1,15 +1,14 @@
-/*
 const supertest = require('supertest');
 const chai = require('chai');
-const chaiHttp = require('chai-http');
-const server = require('./../../server');
-expect = require('chai').expect;
-const should = chai.should();
-chai.use(chaiHttp);
+const jwt = require('jsonwebtoken');
+expect = chai.expect;
+chai.should();
 
 let token = '';
-let api = supertest.agent("http://localhost:4000/api/user");
+let userApi = supertest.agent("http://localhost:4000/api/user");
+let api = supertest.agent("http://localhost:4000/api/note");
 
+// Need To be modified
 
 module.exports = describe('Test Route with Token', function() {
     let user = {
@@ -17,7 +16,7 @@ module.exports = describe('Test Route with Token', function() {
         userPasswordHash: "123456"
     };
     it("User login.", function (done) {
-        api.post('/login')
+        userApi.post('/login')
             .set('Accept', 'application/json')
             .send(user)
             .expect(200)
@@ -27,6 +26,22 @@ module.exports = describe('Test Route with Token', function() {
                 done();
             });
     });
+
+    it("Get all notes", function (done) {
+        let decodeToken = jwt.decode(token, { complete: true });
+        console.log('token: ' + decodeToken.payload.userId);        
+        api.get("/")
+            .set('Accept', 'application/json')
+            .set('Authorization', 'Bearer ' + token)
+            .expect(200)
+            .end(function (err, res) {
+                console.log('userId:' + res.body.data.userId);
+                expect(res.body.data[0].userId).to.equal(decodeToken.payload.userId);
+                done();
+            });
+    });
+
+
+
 });
 
-*/

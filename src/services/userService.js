@@ -87,7 +87,7 @@ function update(req, res, data, id) {
 }
 
 function reset(req, res, data) {
-    let query = 'UPDATE ' + User[0].table + 'SET ' + User[1].userPasswordHash + '=' + conn.escape(data.userPasswordHash) + ' WHERE ' + User[1].userEmail + '='
+    let query = 'UPDATE ' + User[0].table + ' SET ' + User[1].userPasswordHash + '=' + conn.escape(data.userPasswordHash) + ' WHERE ' + User[1].userEmail + '='
         + conn.escape(data.userEmail) + ";";
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {

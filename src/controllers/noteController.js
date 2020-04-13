@@ -1,10 +1,10 @@
-const data = require('../services/noteService');
+const noteService = require('../services/noteService');
 
 
 async function findAll(req, res) {
     let output = {};
     try {
-        output.data = await data.findAll();
+        output.data = await noteService.findAll();
         output.metadata = { massage: output.data.length + " rows retrieved." };
         if (output.data.length === 0) {
             res.status(200).send({
@@ -24,7 +24,7 @@ async function findById(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.findByUserId(req, res, id);
+        output.data = await noteService.findByUserId(req, res, id);
         output.metadata = { massage: "Note Id: " + id + " Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
@@ -41,11 +41,10 @@ async function findById(req, res) {
 }
 
 
-async function findByUserId(req, res) {
+async function findByUserId(req, res,id) {
     let output = {};
-    let id = req.params.id;
     try {
-        output.data = await data.findByUserId(req, res, id);
+        output.data = await noteService.findByUserId(req, res, id);
         output.metadata = { massage: "User Id: " + id + " Notes Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
@@ -71,7 +70,7 @@ async function save(req, res) {
         note: req.body.note
     };
     try {
-        output.data = await data.save(req, res, obj);
+        output.data = await noteService.save(req, res, obj);
         output.metadata = { massage: "Note Record Added. " };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
@@ -98,7 +97,7 @@ async function update(req, res) {
         note: req.body.note
     };
     try {
-        output.data = await data.update(req, res, obj, id);
+        output.data = await noteService.update(req, res, obj, id);
         output.metadata = { massage: "Note Id : " + id + " Updated." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
@@ -118,7 +117,7 @@ async function remove(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.remove(req, res, id);
+        output.data = await noteService.remove(req, res, id);
         output.metadata = { massage: "User Id : " + id + " Deleted." };
         if (output.data.affectedRows === 0) {
             res.status(200).send({

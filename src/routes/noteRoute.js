@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 const process = require('../controllers/noteController');
 const middleware = require('../middleware/auth-middleware');
-const jwt = require('jsonwebtoken');
 const systemConfig = require('../middleware/config.json');
 
 const secretKey = systemConfig.session.jwtSecret;
 
+// Make all filtered by logged userId
 
 router.get('/', middleware.authMiddleware, (req,res) => {
-    process.findAll(req,res).then();
+    let id = middleware.getLoggedUser(req);
+    process.findByUserId(req,res,id).then();
 });
 
 router.get('/:id', middleware.authMiddleware, (req, res) => {

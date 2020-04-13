@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const process = require('../controllers/userController');
 const middleware = require('../middleware/auth-middleware');
-const jwt = require('jsonwebtoken');
 const systemConfig = require('../middleware/config.json');
 
 
