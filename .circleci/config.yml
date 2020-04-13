@@ -10,7 +10,7 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: node server.js
+            - run: mocha src/test/test.js
 workflows:
     build-and-test:
       jobs:
