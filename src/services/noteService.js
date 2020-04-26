@@ -15,7 +15,7 @@ function findAll() {
     });
 }
 
-function findByUserId(req, res, id) {
+function findByUserId(id) {
     const query = 'SELECT * FROM ' + Note[0].table + ' WHERE ' + Note[1].userId + '=' + conn.escape(id) + ';';
     console.log(query);
     return new Promise((resolve, reject) => {
@@ -29,7 +29,7 @@ function findByUserId(req, res, id) {
     });
 }
 
-function findById(req, res, id) {
+function findById(id) {
     const query = dbHelper.findById(Note, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
@@ -43,7 +43,7 @@ function findById(req, res, id) {
 }
 
 
-function save(req, res, data) {
+function save(data) {
     let query = dbHelper.save(Note, data);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
@@ -56,7 +56,7 @@ function save(req, res, data) {
     });
 }
 
-function update(req, res, data, id) {
+function update(data, id) {
     let query = dbHelper.update(Note, data, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
@@ -69,7 +69,7 @@ function update(req, res, data, id) {
     });
 }
 
-function remove(req, res, id) {
+function remove(id) {
     let query = dbHelper.delete(Note, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {

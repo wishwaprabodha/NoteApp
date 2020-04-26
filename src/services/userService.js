@@ -15,7 +15,7 @@ function findAll() {
     });
 }
 
-function findById(req, res, id) {
+function findById(id) {
     const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ' FROM ' + User[0].table + ' WHERE ' + User[0].idColumn 
     + '=' + conn.escape(id) + ';';
     return new Promise((resolve, reject) => {
@@ -30,7 +30,7 @@ function findById(req, res, id) {
 }
 
 
-function findByUserEmail(req, res, email) {
+function findByUserEmail(email) {
     const query = 'SELECT ' + User[0].idColumn
         + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
     return new Promise((resolve, reject) => {
@@ -45,7 +45,7 @@ function findByUserEmail(req, res, email) {
 }
 
 
-function login(req, res, email) {
+function login(email) {
     const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ',' + User[1].userPasswordHash
         + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
     return new Promise((resolve, reject) => {
@@ -60,7 +60,7 @@ function login(req, res, email) {
 }
 
 
-function save(req, res, data) {
+function save(data) {
     let query = dbHelper.save(User, data);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
@@ -73,7 +73,7 @@ function save(req, res, data) {
     });
 }
 
-function update(req, res, data, id) {
+function update(data, id) {
     let query = dbHelper.update(User, data, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {
@@ -86,7 +86,7 @@ function update(req, res, data, id) {
     });
 }
 
-function reset(req, res, data) {
+function reset(data) {
     let query = 'UPDATE ' + User[0].table + ' SET ' + User[1].userPasswordHash + '=' + conn.escape(data.userPasswordHash) + ' WHERE ' + User[1].userEmail + '='
         + conn.escape(data.userEmail) + ";";
     return new Promise((resolve, reject) => {
@@ -100,7 +100,7 @@ function reset(req, res, data) {
     });
 }
 
-function remove(req, res, id) {
+function remove(id) {
     let query = dbHelper.delete(User, id);
     return new Promise((resolve, reject) => {
         conn.db.query(query, (err, result) => {

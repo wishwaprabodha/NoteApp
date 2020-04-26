@@ -14,7 +14,7 @@ async function findAll(req, res) {
     let output = {};
     try {
         output.data = await userService.FindAll();
-        output.metadata = {massage: output.data.length + " rows retrieved."};
+        output.metadata = { massage: output.data.length + " rows retrieved." };
         if (output.data.length === 0) {
             res.status(200).send({
                 'DATA': 'NO DATA FOUND',
@@ -33,8 +33,8 @@ async function findById(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await userService.FindById(req, res, id);
-        output.metadata = {massage: "User Id: " + id + " Retrieved."};
+        output.data = await userService.FindById(id);
+        output.metadata = { massage: "User Id: " + id + " Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'DATA': 'NO DATA FOUND',
@@ -54,15 +54,15 @@ async function login(req, res) {
     let output = {};
     let email = req.body.userEmail;
     try {
-        output.data = await userService.Login(req, res, email);
-        output.metadata = {massage: "User Email : " + email + " Retreived."};
+        output.data = await userService.Login(email);
+        output.metadata = { massage: "User Email : " + email + " Retreived." };
         if (output.data.length === 0) {
             res.status(200).send({
                 'ERROR': 'NO DATA FOUND',
             })
         } else {
             if (bcrypt.compareSync(req.body.userPasswordHash, output.data[0].userPasswordHash)) {
-                token = jwt.sign({userId: output.data[0].userId, secret: secretKey}, secretKey);
+                token = jwt.sign({ userId: output.data[0].userId }, secretKey);
                 res.send({
                     status: 1,
                     userId: output.data[0].userId,
@@ -87,6 +87,11 @@ async function reset(req, res) {
     let output = {};
     try {
         let userData = await userService.FindEmail(req.body.userEmail);
+        if (!userData) {
+            res.status(200).send({
+                'ERROR': 'User email does not exist',
+            });
+        }
         let passphrase = req.body.userPasswordHash;
         let hashPassword = bcrypt.hashSync(passphrase, saltRounds);
         let obj = {
@@ -94,8 +99,8 @@ async function reset(req, res) {
             userPasswordHash: hashPassword
         };
         try {
-            output.data = await userService.Reset(req, res, obj);
-            output.metadata = {massage: "User Email : " + req.body.userEmail + " Password Reseted."};
+            output.data = await userService.Reset(obj);
+            output.metadata = { massage: "User Email : " + req.body.userEmail + " Password Reseted." };
             if (output.data.affectedRows === 0) {
                 res.status(200).send({
                     'ERROR': 'User modification failed',
@@ -111,8 +116,8 @@ async function reset(req, res) {
     } catch (error) {
         console.error(error);
         res.status(200).send({
-            'ERROR': 'User email does not exist',
-        })
+            error: error
+        });
     }
 }
 
@@ -122,17 +127,17 @@ async function save(req, res) {
     let obj = {
         userName: req.body.userName,
         userEmail: req.body.userEmail,
-        userPasswordHash:  bcrypt.hashSync(req.body.userPasswordHash, saltRounds)
+        userPasswordHash: bcrypt.hashSync(req.body.userPasswordHash, saltRounds)
     };
     try {
-        let verify = await userService.FindEmail(req,res,obj.userEmail);
-        if(verify.length > 0){
+        let verify = await userService.FindEmail(obj.userEmail);
+        if (verify.length > 0) {
             res.status(200).send({
                 'ERROR': 'User email exists',
             })
-        }else {
-            output.data = await userService.Save(req, res, obj);
-            output.metadata = {massage: "User Record Added."};
+        } else {
+            output.data = await userService.Save(obj);
+            output.metadata = { massage: "User Record Added." };
             if (!Object.keys(output.data).length) {
                 res.status(200).send({
                     'ERROR': 'User Insertion failed',
@@ -156,8 +161,8 @@ async function update(req, res) {
         userEmail: req.body.userEmail,
     };
     try {
-        output.data = await userService.Update(req, res, obj, id);
-        output.metadata = {massage: "User Id : " + id + " Updated."};
+        output.data = await userService.Update(obj, id);
+        output.metadata = { massage: "User Id : " + id + " Updated." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'User Modification failed',
@@ -176,8 +181,8 @@ async function remove(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await userService.Remove(req, res, id);
-        output.metadata = {massage: "User Id : " + id + " Deleted."};
+        output.data = await userService.Remove(id);
+        output.metadata = { massage: "User Id : " + id + " Deleted." };
         if (output.data.affectedRows === 0) {
             res.status(200).send({
                 'ERROR': 'User Deletion failed',
