@@ -12,8 +12,8 @@ module.exports.authMiddleware = async (req, res, next) => {
         const token = req.headers.authorization.split(' ')[1];
         if (token) {
             try {
-                let decodeToken = jwt.decode(token, { complete: true });
-                let userData = await userService.FindById(decodeToken.payload.userId);
+                let decodeToken = jwt.verify(token, secretKey);
+                let userData = await userService.FindById(decodeToken.userId);
                 if (userData) {
                     req.token = token;
                     next();
@@ -39,8 +39,7 @@ module.exports.authMiddleware = async (req, res, next) => {
 module.exports.getLoggedUser = (req) => {
     const token = req.headers.authorization.split(' ')[1];
     if (token) {
-            let decodeToken = jwt.decode(token, { complete: true });
-            console.log('catch: ' + decodeToken.payload.userId);
-            return decodeToken.payload.userId;
+            let decodeToken = jwt.decode(token,secretKey);
+            return decodeToken.userId;
         }
 };
