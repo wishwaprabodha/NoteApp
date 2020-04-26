@@ -13,7 +13,7 @@ module.exports.authMiddleware = async (req, res, next) => {
         if (token) {
             try {
                 let decodeToken = jwt.decode(token, { complete: true });
-                let userData = await userService.FindById(req, res, decodeToken.payload.userId);
+                let userData = await userService.FindById(decodeToken.payload.userId);
                 if (userData) {
                     req.token = token;
                     next();
