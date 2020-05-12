@@ -24,7 +24,7 @@ async function findById(req, res) {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await noteService.findByUserId(id);
+        output.data = await noteService.findById(id);
         output.metadata = { massage: "Note Id: " + id + " Retrieved." };
         if (!Object.keys(output.data).length) {
             res.status(200).send({
