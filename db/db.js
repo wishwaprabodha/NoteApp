@@ -1,17 +1,18 @@
+'use strict'
+
 require('dotenv').config();
 const mysql = require('mysql');
 
 
-const con = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASS,
-    timezone: 'UTC',
+const connection = mysql.createConnection({
+    host: process.env.RDS_HOSTNAME,
+    database: process.env.RDS_DB_NAME,
+    user: process.env.RDS_USERNAME,
+    password: process.env.RDS_PASSWORD,
+    port: process.env.RDS_PORT
 });
 
-con.connect(function(err) {
+connection.connect((err) => {
     if (err) {
         console.log(err);
         throw err;
@@ -24,6 +25,6 @@ function escape(value) {
 }
 
 module.exports = {
-    db: con,
+    db: connection,
     escape: escape
 };

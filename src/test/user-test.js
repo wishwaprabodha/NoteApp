@@ -14,8 +14,8 @@ module.exports = describe("Unit Test", function () {
 
     it("User Login", function (done) {
         let user = {
-            userEmail: "wishwa@aspitio.com",
-            userPasswordHash: "123456"
+            userEmail: "ww46673@gmail.com",
+            userPasswordHash: "wishwa94"
         };
         api.post("/login")
             .set('Accept', 'application/json')
@@ -42,7 +42,7 @@ module.exports = describe("Unit Test", function () {
 
 
     it("Return user for Id.", function (done) {
-        api.get("/6")
+        api.get("/1")
             .set('Accept', 'application/json')
             .set('Authorization', 'Bearer ' + token)
             .expect(200)

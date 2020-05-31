@@ -12,8 +12,8 @@ let api = supertest.agent("http://localhost:4000/api/note");
 
 module.exports = describe('Test Route with Token', function() {
     let user = {
-        userEmail: "wishwa@aspitio.com",
-        userPasswordHash: "123456"
+        userEmail: "ww46673@gmail.com",
+        userPasswordHash: "wishwa94"
     };
     it("User login.", function (done) {
         userApi.post('/login')
