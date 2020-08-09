@@ -7,7 +7,6 @@ class Note {
         this.noteDate = undefined;
         this.noteTopic = undefined;
         this.note = undefined;
-        this.modifiedTime = undefined;
     }
 }
 
@@ -19,8 +18,7 @@ Note.mappings = {
         noteId: "noteId",
         noteDate: "noteDate",
         noteTopic: "noteTopic",
-        note: "note",
-        modifiedTime: "modified_time"
+        note: "note"
     }
 };
 

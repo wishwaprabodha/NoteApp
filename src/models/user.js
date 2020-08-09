@@ -6,7 +6,6 @@ class User {
         this.userName = undefined;
         this.userEmail = undefined;
         this.userPasswordHash = undefined;
-        this.modifiedTime = undefined;
     }
 }
 
@@ -17,8 +16,7 @@ User.mappings = {
         userId: "userId",
         userName: "userName",
         userEmail: "userEmail",
-        userPasswordHash: "userPasswordHash",
-        modifiedTime: "modified_time"
+        userPasswordHash: "userPasswordHash"
     }
 };
 

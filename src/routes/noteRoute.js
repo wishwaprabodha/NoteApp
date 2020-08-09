@@ -2,15 +2,11 @@ const express = require('express');
 const router = express.Router();
 const process = require('../controllers/noteController');
 const middleware = require('../middleware/auth-middleware');
-const systemConfig = require('../middleware/config.json');
-
-const secretKey = systemConfig.session.jwtSecret;
-
+const logger = require('../../helpers/logger');
 // Make all filtered by logged userId
-
-router.get('/', middleware.authMiddleware, (req,res) => {
+router.get('/', middleware.authMiddleware, (req, res) => {
     let id = middleware.getLoggedUser(req);
-    process.findByUserId(req,res,id).then();
+    process.findByUserId(req, res, id).then();
 });
 
 router.get('/:id', middleware.authMiddleware, (req, res) => {
@@ -23,10 +19,6 @@ router.get('/user/:id', middleware.authMiddleware, (req, res) => {
 
 router.post('/', middleware.authMiddleware, (req, res) => {
     process.save(req, res).then();
-});
-
-router.put('/:id', middleware.authMiddleware, (req, res) => {
-    process.update(req, res).then();
 });
 
 router.delete('/:id', middleware.authMiddleware, (req, res) => {

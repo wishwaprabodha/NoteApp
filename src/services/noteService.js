@@ -1,11 +1,10 @@
-const conn = require('../../db/db');
-const Note = require('../models/note.json');
-const dbHelper = require('../../db/query-generator');
+'use strict'
+const Mysql = require('../../helpers/mysql');
+const Mapper = require('../mappers/noteMapper');
 
-function findAll() {
-    const query = dbHelper.findAll(Note);
+exports.findAll = () => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.findAll(), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -13,13 +12,11 @@ function findAll() {
             }
         });
     });
-}
+};
 
-function findByUserId(id) {
-    const query = 'SELECT * FROM ' + Note[0].table + ' WHERE ' + Note[1].userId + '=' + conn.escape(id) + ';';
-    console.log(query);
+exports.findByUserId = (id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.getNotesByUserId(id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -27,12 +24,11 @@ function findByUserId(id) {
             }
         });
     });
-}
+};
 
-function findById(id) {
-    const query = dbHelper.findById(Note, id);
+exports.findById = (id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.findById(id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -40,13 +36,24 @@ function findById(id) {
             }
         });
     });
-}
+};
 
-
-function save(data) {
-    let query = dbHelper.save(Note, data);
+exports.save = (data) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.save(data), (err, result) => {
+            if (err) {
+                reject(err);
+                console.log(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};
+
+exports.update = (data, id) => {
+    return new Promise((resolve, reject) => {
+        Mysql.connect.query(Mapper.update(data, id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -54,12 +61,11 @@ function save(data) {
             }
         });
     });
-}
+};
 
-function update(data, id) {
-    let query = dbHelper.update(Note, data, id);
+exports.remove = (id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.delete(id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -67,27 +73,4 @@ function update(data, id) {
             }
         });
     });
-}
-
-function remove(id) {
-    let query = dbHelper.delete(Note, id);
-    return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(result);
-            }
-        });
-    });
-}
-
-
-module.exports = {
-    findAll: findAll,
-    save: save,
-    update: update,
-    findById: findById,
-    findByUserId: findByUserId,
-    remove: remove
 };

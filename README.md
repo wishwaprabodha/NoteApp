@@ -30,7 +30,7 @@ Implementation of Backend API for Note Taking Application.
 
 {
 	"userName" : "<your username>",
-	"useEmail" : "<your email>",
+	"userEmail" : "<your email>",
 	"userPasswordHash" : "<your password>"
 }
 ```

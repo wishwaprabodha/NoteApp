@@ -10,7 +10,7 @@ let api = supertest.agent("http://localhost:4000/api/note");
 
 // Need To be modified
 
-module.exports = describe('Test Route with Token', function() {
+module.exports = describe('Test Route with Token', function () {
     let user = {
         userEmail: "ww46673@gmail.com",
         userPasswordHash: "wishwa94"
@@ -20,7 +20,7 @@ module.exports = describe('Test Route with Token', function() {
             .set('Accept', 'application/json')
             .send(user)
             .expect(200)
-            .end(function(err, res) {
+            .end(function (err, res) {
                 expect(res.body.success).to.equal('AUTHENTICATED');
                 token = res.body.token;
                 done();
@@ -28,8 +28,8 @@ module.exports = describe('Test Route with Token', function() {
     });
 
     it.skip("Get all notes", function (done) {
-        let decodeToken = jwt.decode(token, { complete: true });
-        console.log('token: ' + decodeToken.payload.userId);        
+        let decodeToken = jwt.decode(token, {complete: true});
+        console.log('token: ' + decodeToken.payload.userId);
         api.get("/")
             .set('Accept', 'application/json')
             .set('Authorization', 'Bearer ' + token)
@@ -40,7 +40,6 @@ module.exports = describe('Test Route with Token', function() {
                 done();
             });
     });
-
 
 
 });

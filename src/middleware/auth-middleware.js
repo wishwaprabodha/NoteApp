@@ -1,19 +1,16 @@
 const jwt = require('jsonwebtoken');
 const systemConfig = require('./config.json');
 const userService = require('../services/userService');
-
 // Encrypt all the data before sending
-
 const secretKey = systemConfig.session.jwtSecret;
 
-
-module.exports.authMiddleware = async (req, res, next) => {
+exports.authMiddleware = async (req, res, next) => {
     if (req.headers['authorization']) {
         const token = req.headers.authorization.split(' ')[1];
         if (token) {
             try {
-                let decodeToken = jwt.verify(token, secretKey);
-                let userData = await userService.FindById(decodeToken.userId);
+                let decodedToken = jwt.verify(token, secretKey);
+                let userData = await userService.findById(decodedToken.userId);
                 if (userData) {
                     req.token = token;
                     next();
@@ -22,9 +19,9 @@ module.exports.authMiddleware = async (req, res, next) => {
                         ERROR: 'Unauthorized'
                     })
                 }
-            } catch (e) {
+            } catch (err) {
                 res.status(406).send({
-                    ERROR: 'Invalid Token'
+                    ERROR: err
                 })
             }
 
@@ -36,10 +33,10 @@ module.exports.authMiddleware = async (req, res, next) => {
     }
 };
 
-module.exports.getLoggedUser = (req) => {
+exports.getLoggedUser = (req) => {
     const token = req.headers.authorization.split(' ')[1];
     if (token) {
-            let decodeToken = jwt.decode(token,secretKey);
-            return decodeToken.userId;
-        }
+        let decodeToken = jwt.decode(token, secretKey);
+        return decodeToken.userId;
+    }
 };

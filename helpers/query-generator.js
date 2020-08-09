@@ -31,7 +31,9 @@ exports.save = (model, obj) => {
     _query = _prefix.substring(0, _prefix.length - 1);
     _query += `) VALUES (`;
     for (let key in obj) {
-        _query += `${escape(obj[key])},`;
+        if(key !== model.mappings.idColumn) {
+            _query += `${escape(obj[key])},`;
+        }
     }
     return `${_query.substring(0, _query.length - 1)});`
 };

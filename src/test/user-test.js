@@ -29,7 +29,7 @@ module.exports = describe("Unit Test", function () {
             });
     });
 
-   it("Get all Users", function (done) {
+    it("Get all Users", function (done) {
         api.get("/")
             .set('Accept', 'application/json')
             .set('Authorization', 'Bearer ' + token)

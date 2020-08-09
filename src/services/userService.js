@@ -1,11 +1,12 @@
-const conn = require('../../db/db');
-const User = require('../models/user.json');
-const dbHelper = require('../../db/query-generator');
+'use strict'
 
-function findAll() {
-    const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ' FROM ' + User[0].table + ';';
+const Mysql = require('../../helpers/mysql');
+const Mapper = require('../mappers/userMapper');
+
+
+exports.findAll = () => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.findAll(), (err, result) => {
             if (err) {
                 reject(err)
             } else {
@@ -13,13 +14,11 @@ function findAll() {
             }
         });
     });
-}
+};
 
-function findById(id) {
-    const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ' FROM ' + User[0].table + ' WHERE ' + User[0].idColumn 
-    + '=' + conn.escape(id) + ';';
+exports.findById = (id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.findById(id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -27,14 +26,11 @@ function findById(id) {
             }
         });
     });
-}
+};
 
-
-function findByUserEmail(email) {
-    const query = 'SELECT ' + User[0].idColumn
-        + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
+exports.findByUserEmail = (email) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.findByUserEmail(email), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -42,14 +38,12 @@ function findByUserEmail(email) {
             }
         });
     });
-}
+};
 
 
-function login(email) {
-    const query = 'SELECT ' + User[0].idColumn + ',' + User[1].userName + ',' + User[1].userEmail + ',' + User[1].userPasswordHash
-        + ' FROM ' + User[0].table + ' WHERE ' + User[1].userEmail + '=' + conn.escape(email) + ";";
+exports.login = (email) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.login(email), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -57,13 +51,12 @@ function login(email) {
             }
         });
     });
-}
+};
 
 
-function save(data) {
-    let query = dbHelper.save(User, data);
+exports.save = (data) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.save(data), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -71,12 +64,11 @@ function save(data) {
             }
         });
     });
-}
+};
 
-function update(data, id) {
-    let query = dbHelper.update(User, data, id);
+exports.update = (data, id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.update(data, id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -84,13 +76,11 @@ function update(data, id) {
             }
         });
     });
-}
+};
 
-function reset(data) {
-    let query = 'UPDATE ' + User[0].table + ' SET ' + User[1].userPasswordHash + '=' + conn.escape(data.userPasswordHash) + ' WHERE ' + User[1].userEmail + '='
-        + conn.escape(data.userEmail) + ";";
+exports.reset = (data) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.reset(data), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -98,12 +88,11 @@ function reset(data) {
             }
         });
     });
-}
+};
 
-function remove(id) {
-    let query = dbHelper.delete(User, id);
+exports.remove = (id) => {
     return new Promise((resolve, reject) => {
-        conn.db.query(query, (err, result) => {
+        Mysql.connect.query(Mapper.delete(id), (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -111,17 +100,5 @@ function remove(id) {
             }
         });
     });
-}
-
-
-module.exports = {
-    FindAll: findAll,
-    Save: save,
-    Update: update,
-    FindById: findById,
-    Reset: reset,
-    Login: login,
-    Remove: remove,
-    FindEmail:findByUserEmail
 };
 
