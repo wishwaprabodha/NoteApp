@@ -1,17 +1,9 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
-jobs:
-  build-and-test:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: mocha src/test/test.js
+  node: circleci/node@3.0.0
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  node-tests:
+    jobs:
+      - npm i
+      - node server.js
+      - npm test
