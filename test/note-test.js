@@ -10,10 +10,10 @@ let api = supertest.agent("http://localhost:4000/api/note");
 
 // Need To be modified
 
-module.exports = describe('Test Route with Token', function () {
+module.exports = describe('Unit Test Note', function () {
     let user = {
-        userEmail: "ww46673@gmail.com",
-        userPasswordHash: "wishwa94"
+        userEmail: "wishwa@gmail.com",
+        userPasswordHash: "wishwa"
     };
     it("User login.", function (done) {
         userApi.post('/login')
