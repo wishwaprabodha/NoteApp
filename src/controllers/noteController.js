@@ -1,14 +1,14 @@
-const data = require('../services/noteService');
+const noteService = require('../services/noteService');
+const middleware = require('../middleware/auth-middleware');
 
-
-async function findAll(req, res) {
+exports.findAll = async (req, res) => {
     let output = {};
     try {
-        output.data = await data.findAll(req, res);
-        output.metadata = { massage: output.data.length + " rows retrieved." };
+        output.data = await noteService.findAll();
+        output.metadata = {massage: output.data.length + " rows retrieved."};
         if (output.data.length === 0) {
             res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
+                'DATA': 'NO DATA FOUND',
             })
         } else {
             res.send(output);
@@ -20,12 +20,32 @@ async function findAll(req, res) {
     }
 }
 
-async function findById(req, res) {
+exports.findById = async (req, res) => {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.findById(req, res, id);
-        output.metadata = { massage: "Note Id: " + id + " Retrieved." };
+        output.data = await noteService.findById(id);
+        output.metadata = {massage: "Note Id: " + id + " Retrieved."};
+        if (!Object.keys(output.data).length) {
+            res.status(200).send({
+                'DATA': 'NO DATA FOUND',
+            })
+        } else {
+            res.send(output);
+        }
+    } catch (e) {
+        res.status(200).send({
+            'ERROR': e,
+        })
+    }
+}
+
+exports.findByUserId = async (req, res) => {
+    let output = {};
+    let id = req.params.id;
+    try {
+        output.data = await noteService.findByUserId(id);
+        output.metadata = {massage: "User Id: " + id + " Notes Retrieved."};
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'NO DATA FOUND',
@@ -40,40 +60,23 @@ async function findById(req, res) {
     }
 }
 
-
-async function findByUserId(req, res) {
-    let output = {};
-    let id = req.params.id;
-    try {
-        output.data = await data.findByUserId(req, res, id);
-        output.metadata = { massage: "User Id: " + id + " Notes Retrieved." };
-        if (!Object.keys(output.data).length) {
-            res.status(200).send({
-                'ERROR': 'NO DATA FOUND',
-            })
-        } else {
-            res.send(output);
-        }
-    } catch (e) {
-        res.status(200).send({
-            'ERROR': e,
-        })
-    }
-}
-
-
-async function save(req, res) {
+exports.save = async (req, res) => {
     let output = {};
     let obj = {
         noteId: req.body.noteId,
-        userId: req.body.userId,
+        userId: middleware.getLoggedUser(req),
         noteDate: req.body.noteDate,
         noteTopic: req.body.noteTopic,
         note: req.body.note
     };
     try {
-        output.data = await data.save(req, res, obj);
-        output.metadata = { massage: "Note Record Added. " };
+        if (obj.noteId.length > 0) {
+            output.data = await noteService.update(obj);
+            output.metadata = {massage: "Note Id : " + id + " Updated."};
+        } else {
+            output.data = await noteService.save(obj);
+            output.metadata = {massage: "Note Record Added. "};
+        }
         if (!Object.keys(output.data).length) {
             res.status(200).send({
                 'ERROR': 'User Insertion failed',
@@ -88,39 +91,12 @@ async function save(req, res) {
     }
 }
 
-async function update(req, res) {
-    let output = {};
-    let id = req.params.id;
-    let obj = {
-        noteId: req.body.noteId,
-        userId: req.body.userId,
-        noteDate: req.body.noteDate,
-        noteTopic: req.body.noteTopic,
-        note: req.body.note
-    };
-    try {
-        output.data = await data.update(req, res, obj, id);
-        output.metadata = { massage: "Note Id : " + id + " Updated." };
-        if (!Object.keys(output.data).length) {
-            res.status(200).send({
-                'ERROR': 'Note Modification failed',
-            })
-        } else {
-            res.send(output);
-        }
-    } catch (e) {
-        res.status(200).send({
-            'ERROR': e,
-        })
-    }
-}
-
-async function remove(req, res) {
+exports.remove = async (req, res) => {
     let output = {};
     let id = req.params.id;
     try {
-        output.data = await data.remove(req, res, id);
-        output.metadata = { massage: "User Id : " + id + " Deleted." };
+        output.data = await noteService.remove(id);
+        output.metadata = {massage: "User Id : " + id + " Deleted."};
         if (output.data.affectedRows === 0) {
             res.status(200).send({
                 'ERROR': 'User Deletion failed',
@@ -134,13 +110,3 @@ async function remove(req, res) {
         })
     }
 }
-
-
-module.exports = {
-    findAll: findAll,
-    findById: findById,
-    save: save,
-    update: update,
-    remove: remove,
-    findByUserId: findByUserId
-};
