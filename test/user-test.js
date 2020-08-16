@@ -7,15 +7,15 @@ let api = supertest.agent("http://localhost:4000/api/user");
 let token = '';
 
 
-module.exports = describe("Unit Test", function () {
+module.exports = describe("Unit Test - User", function () {
     beforeEach(() => {
         console.log('Before Each..');
     });
 
     it("User Login", function (done) {
         let user = {
-            userEmail: "ww46673@gmail.com",
-            userPasswordHash: "wishwa94"
+            userEmail: "wishwa@gmail.com",
+            userPasswordHash: "wishwa"
         };
         api.post("/login")
             .set('Accept', 'application/json')
@@ -48,7 +48,7 @@ module.exports = describe("Unit Test", function () {
             .expect(200)
             .end(function (err, res) {
                 res.status.should.equal(200);
-                expect(res.body.data[0]["userId"]).to.equal(6);
+                expect(res.body.data[0]["userId"]).to.equal(1);
                 done();
             });
     });
