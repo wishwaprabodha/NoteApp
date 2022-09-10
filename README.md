@@ -7,7 +7,7 @@ Implementation of Backend API for Note Taking Application.
 1. Install docker if not installed.
 2. Clone the Repository.
 3. Run ``` docker build -t <tagname> . ``` to build.
-4. Run ``` docker run --network="host" -p<local-port>:<docker-port> <tagname>```
+4. Run ``` docker run --network="host" -p <local-port>:<docker-port> <tagname>```
 5. Additional docker commands.
 6.  Remove all docker containers. ``` docker rm -vf $(docker ps -a -q) ```
 7.  Remove all docker images. ``` docker rmi -f $(docker images -a -q) ```
